@@ -33,7 +33,7 @@ import java.util.Map;
 /**
  * Deserializer using a Jackson {@link ObjectMapper}.
  *
- * @since 0.10.0
+ * @since 0.14.0
  */
 public class Jackson3Deserializer<T> extends AbstractDeserializer<T> {
 
@@ -79,9 +79,10 @@ public class Jackson3Deserializer<T> extends AbstractDeserializer<T> {
     }
 
     /**
-     * Constructor using the specified Jackson {@link ObjectMapper}.
+     * Deserializer using a Jackson {@link ObjectMapper}.
      *
-     * @param objectMapper the ObjectMapper to use for deserialization.
+     * @since 0.14.0
+     * @param objectMapper
      */
     @SuppressWarnings("unchecked")
     public Jackson3Deserializer(ObjectMapper objectMapper) {
@@ -115,7 +116,6 @@ public class Jackson3Deserializer<T> extends AbstractDeserializer<T> {
      * @param objectMapper the objectMapper to modify by registering a custom type-converting
      *                     {@link tools.jackson.databind.JacksonModule Module}
      * @param claimTypeMap The claim name-to-class map used to deserialize claims into the given type
-     * @since 0.13.0
      */
     public Jackson3Deserializer(ObjectMapper objectMapper, Map<String, Class<?>> claimTypeMap) {
         this(objectMapper, (Class<T>) Object.class, claimTypeMap);
@@ -128,6 +128,12 @@ public class Jackson3Deserializer<T> extends AbstractDeserializer<T> {
         this.returnType = returnType;
     }
 
+    /**
+     *
+     * @param objectMapper
+     * @param returnType
+     * @param claimTypeMap
+     */
     private Jackson3Deserializer(ObjectMapper objectMapper, Class<T> returnType, Map<String, Class<?>> claimTypeMap) {
         Assert.notNull(objectMapper, "ObjectMapper cannot be null.");
         Assert.notNull(returnType, "Return type cannot be null.");

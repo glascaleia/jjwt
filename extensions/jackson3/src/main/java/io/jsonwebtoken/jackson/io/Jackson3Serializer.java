@@ -32,11 +32,11 @@ import static tools.jackson.databind.json.JsonMapper.builder;
 /**
  * Serializer using a Jackson {@link ObjectMapper}.
  *
- * @since 0.10.0
+ * @since 0.14.0
  */
 public class Jackson3Serializer<T> extends AbstractSerializer<T> {
 
-    static final String MODULE_ID = "jjwt-jackson";
+    static final String MODULE_ID = "jjwt-jackson3";
     static final JacksonModule MODULE;
 
     static {
@@ -48,11 +48,11 @@ public class Jackson3Serializer<T> extends AbstractSerializer<T> {
     static final ObjectMapper DEFAULT_OBJECT_MAPPER = newObjectMapper();
 
     /**
-     * Creates and returns a new ObjectMapper with the {@code jjwt-jackson} module registered and
+     * Creates and returns a new ObjectMapper with the {@code jjwt-jackson3} module registered and
      * {@code JsonParser.Feature.STRICT_DUPLICATE_DETECTION} enabled (set to true) and
      * {@code DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES} disabled (set to false).
      *
-     * @return a new ObjectMapper with the {@code jjwt-jackson} module registered and
+     * @return a new ObjectMapper with the {@code jjwt-jackson3} module registered and
      * {@code JsonParser.Feature.STRICT_DUPLICATE_DETECTION} enabled (set to true) and
      * {@code DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES} disabled (set to false).
      *
